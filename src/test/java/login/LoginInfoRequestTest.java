@@ -3,6 +3,7 @@ package login;
 import helpers.MockedDynamicRequestAdapterBuilder;
 import org.junit.Before;
 import org.junit.Test;
+import request_utils.DynamicRequestAdapter;
 import rx.Observable;
 
 import static org.mockito.Mockito.*;

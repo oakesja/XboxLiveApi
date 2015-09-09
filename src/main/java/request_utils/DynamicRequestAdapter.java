@@ -1,12 +1,8 @@
-package login;
+package request_utils;
 
-import request_utils.CustomInterceptor;
-import request_utils.StringConverter;
 import retrofit.RestAdapter;
 import retrofit.client.Response;
 import rx.Observable;
-
-import java.util.Map;
 
 public class DynamicRequestAdapter {
 
@@ -34,10 +30,6 @@ public class DynamicRequestAdapter {
 
     public Observable<Response> getResponse() {
         return createService(getBaseBuilder()).getResponse();
-    }
-
-    public Observable<Map<String, Object>> post(Map<String, String> body) {
-        return createService(getBaseBuilder()).post(body);
     }
 
     private RestAdapter.Builder getBaseBuilder() {

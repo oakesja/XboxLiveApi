@@ -1,6 +1,6 @@
 package login;
 
-public class LoginInformation {
+class LoginInformation {
     private String ppft;
     private String url;
 

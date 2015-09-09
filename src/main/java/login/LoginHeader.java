@@ -3,7 +3,7 @@ package login;
 
 import request_utils.Header;
 
-public class LoginHeader implements Header {
+class LoginHeader implements Header {
 
     @Override
     public String[] keys() {

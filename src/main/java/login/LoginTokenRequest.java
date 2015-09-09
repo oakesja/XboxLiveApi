@@ -1,5 +1,6 @@
 package login;
 
+import request_utils.DynamicRequestAdapter;
 import retrofit.client.Header;
 import retrofit.client.Response;
 import rx.Observable;
@@ -8,7 +9,7 @@ import rx.exceptions.OnErrorThrowable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoginTokenRequest {
+class LoginTokenRequest {
     private DynamicRequestAdapter.Builder builder;
     private String username;
     private String password;

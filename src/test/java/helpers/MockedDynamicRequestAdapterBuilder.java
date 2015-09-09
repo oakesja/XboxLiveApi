@@ -1,6 +1,6 @@
 package helpers;
 
-import login.DynamicRequestAdapter;
+import request_utils.DynamicRequestAdapter;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

@@ -3,6 +3,7 @@ package login;
 import helpers.MockedDynamicRequestAdapterBuilder;
 import org.junit.Before;
 import org.junit.Test;
+import request_utils.DynamicRequestAdapter;
 import retrofit.client.Header;
 import retrofit.client.Response;
 import rx.Observable;

@@ -1,14 +1,13 @@
-package login;
+package request_utils;
 
 import org.junit.Before;
 import org.junit.Test;
 import request_utils.CustomInterceptor;
+import request_utils.DynamicRequestAdapter;
+import request_utils.DynamicService;
 import request_utils.StringConverter;
 import retrofit.RestAdapter;
 import retrofit.converter.Converter;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
@@ -56,16 +55,6 @@ public class DynamicRequestAdapterTest {
         verify(restAdapterBuilder, times(0)).setConverter(any(Converter.class));
         verify(restAdapterBuilder, times(1)).setRequestInterceptor(getCustomInterceptor());
         verify(service, times(1)).getResponse();
-    }
-
-    @Test
-    public void post() throws InterruptedException {
-        stubMethods();
-        getAdapter().post(new HashMap<>());
-        verify(restAdapterBuilder, times(1)).setEndpoint(url);
-        verify(restAdapterBuilder, times(0)).setConverter(any(Converter.class));
-        verify(restAdapterBuilder, times(1)).setRequestInterceptor(getCustomInterceptor());
-        verify(service, times(1)).post(any(Map.class));
     }
 
     private void stubMethods() {

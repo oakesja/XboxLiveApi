@@ -28,16 +28,23 @@ public class CustomInterceptorTest {
     }
 
     @Test
-    public void testIntercept() {
+    public void testHeaders() {
         builder.headerKeys(headerKeys)
-                .headerValues(headerValues)
-                .queryKeys(queryKeys)
-                .queryValues(queryValues);
+                .headerValues(headerValues);
         CustomInterceptor interceptor = builder.build();
         interceptor.intercept(request);
         verify(request, times(1)).addHeader(headerKeys[0], headerValues[0]);
         verify(request, times(1)).addHeader(headerKeys[1], headerValues[1]);
+    }
+
+    @Test
+    public void testQueryParams(){
+        builder.queryKeys(queryKeys)
+                .queryValues(queryValues);
+        CustomInterceptor interceptor = builder.build();
+        interceptor.intercept(request);
         verify(request, times(1)).addQueryParam(queryKeys[0], queryValues[0]);
         verify(request, times(1)).addQueryParam(queryKeys[1], queryValues[1]);
     }
+
 }

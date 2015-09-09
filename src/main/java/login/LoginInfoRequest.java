@@ -1,12 +1,13 @@
 package login;
 
+import request_utils.DynamicRequestAdapter;
 import rx.Observable;
 import rx.exceptions.OnErrorThrowable;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class LoginInfoRequest {
+class LoginInfoRequest {
     private static final String URL = "https://login.live.com/oauth20_authorize.srf";
 
     private DynamicRequestAdapter.Builder restAdapterBuilder;

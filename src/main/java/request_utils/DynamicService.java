@@ -1,4 +1,4 @@
-package login;
+package request_utils;
 
 import retrofit.client.Response;
 import retrofit.http.Body;
@@ -14,7 +14,4 @@ public interface DynamicService {
 
     @GET("/")
     Observable<Response> getResponse();
-
-    @POST("/")
-    Observable<Map<String, Object>> post(@Body Map<String, String> body);
 }

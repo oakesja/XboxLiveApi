@@ -21,7 +21,7 @@ public class CustomInterceptor implements RequestInterceptor {
     public void intercept(RequestFacade request) {
         for (int i = 0; i < headerKeys.length; i++)
             request.addHeader(headerKeys[i], headerValues[i]);
-        for (int i = 0; i < headerValues.length; i++)
+        for (int i = 0; i < queryKeys.length; i++)
             request.addQueryParam(queryKeys[i], queryValues[i]);
     }
 
